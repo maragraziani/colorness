@@ -18,3 +18,22 @@ We divide the Hue scale in eight bins: red, orange, yellow, green, cyano, blue, 
 
 # 3. Measuring color-ness as counting
 We compute measures of blue-ness, for example, as the frequency of pixels that belong to the quantized hue range for blue in the image. Hence, blue-ness = \# blue pixels / \#pixels
+
+# 4. Colorful-ness measure in terms of opponent color spaces (by Hasler and Süsstrunk)
+Their image colorfulness metric is described in terms of:
+
+rg = R - G
+yb = \frac{1}{2}(R + G) - B
+
+Next, the standard deviation (\sigma_{rgyb}) and mean (\mu_{rgyb}) are computed before calculating the final colorfulness metric, C.
+
+\sigma_{rgyb} = \sqrt{\sigma_{rg}^2 + \sigma_{yb}^2}
+
+\mu_{rgyb} = \sqrt{\mu_{rg}^2 + \mu_{yb}^2}
+
+C = \sigma_{rgyb} + 0.3 * \mu_{rgyb}
+
+Low C means low color content, high C means high color content (very colorful images)
+
+More info at:
+    https://www.pyimagesearch.com/2017/06/05/computing-image-colorfulness-with-opencv-and-python/ 
