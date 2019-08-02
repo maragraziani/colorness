@@ -23,7 +23,7 @@ We compute measures of blue-ness, for example, as the frequency of pixels that b
 Their image colorfulness metric is described in terms of:
 
 rg = R - G
-yb = \frac{1}{2}(R + G) - B
+yb = $\frac{1}{2}(R + G) - B$
 
 Next, the standard deviation (\sigma_{rgyb}) and mean (\mu_{rgyb}) are computed before calculating the final colorfulness metric, C.
 
